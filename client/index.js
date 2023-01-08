@@ -21,7 +21,7 @@ function getSearchResults(searchTerm) {
 }
 
 function showResults(results) {
-  console.log(results);
+  // console.log(results);
   resultsList.innerHTML=``;
   results.forEach(tag => {
     const li = document.createElement('li');

@@ -7,17 +7,17 @@ const app = express();
 app.use(express.static('./client'));
 
 app.get('/blog/:id', (req, res) => {
-  // console.log(req.params)
-  const ans = scraper.getBlog(req.params.id).then(ans=>{res.json(ans)})
-  // console.log(ans)
-  // res.json(ans);
+  scraper
+  .getBlog(req.params.id)
+  .then(ans=>{
+    res.json(ans)
+  });
 });
 app.get('/search/:title', (req, res) => {
     scraper
       .searchTag(req.params.title)
-      .then(movies => {
-        // console.log(mov)
-        res.json(movies);
+      .then(Blogs => {
+        res.json(Blogs);
       });
 });
 const port = process.env.PORT || 5000;
